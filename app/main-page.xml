@@ -1,0 +1,57 @@
+<!--
+The markup in NativeScript apps contains a series of user interface components, each
+of which NativeScript renders with a platform-specific iOS or Android native control.
+You can find a full list of user interface components you can use in your app at
+https://docs.nativescript.org/ui/components.
+-->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <!--
+    The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
+    http://docs.nativescript.org/ui/action-bar
+    -->
+    <!-- <Page.actionBar>
+        <ActionBar title="Calculator" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar> -->
+    <!--
+    The StackLayout stacks UI components on the screen—either vertically or horizontally.
+    In this case, the StackLayout does vertical stacking; you can change the stacking to
+    horizontal by applying a orientation="horizontal" attribute to the <StackLayout> element.
+    You can learn more about NativeScript layouts at
+    https://docs.nativescript.org/ui/layout-containers.
+
+    These components make use of several CSS class names that are part of the NativeScript
+    core theme, such as p-20, btn, h2, and text-center. You can view a full list of the
+    class names available for styling your app at https://docs.nativescript.org/ui/theme.
+    -->
+    <StackLayout class="p-20">
+        <GridLayout columns="*,*,*,*" rows="auto,auto,auto,auto,auto,auto,auto" class="grid">
+            <Label text="{{expression}}" id='expression' row='0' col='0' colSpan='4' class="display"/>
+
+            <Label text="{{result}}" id='result' row='1' col='0' colSpan='4' class="display"/>
+
+            <Button text="AC" tap="{{ clear }}" class="btn btn-primary btn-active" row='2' col='0' colSpan='2'/>
+            <Button text="&#8676;" tap="{{ backspace }}" class="btn btn-primary btn-active" row='2' col='2'/>
+            <Button text="&#247;" tap="{{ performOperation }}" class="btn btn-primary btn-active" row='2' col='3'/>
+
+            <Button text="7" tap="{{ nums }}" class="btn btn-primary btn-active" row='3' col='0'/>
+            <Button text="8" tap="{{ nums }}" class="btn btn-primary btn-active" row='3' col='1'/>
+            <Button text="9" tap="{{ nums }}" class="btn btn-primary btn-active" row='3' col='2'/>
+            <Button text="+" tap="{{ performOperation }}" class="btn btn-primary btn-active" row='3' col='3'/>
+
+            <Button text="4" tap="{{ nums }}" class="btn btn-primary btn-active" row='4' col='0'/>
+            <Button text="5" tap="{{ nums }}" class="btn btn-primary btn-active" row='4' col='1'/>
+            <Button text="6" tap="{{ nums }}" class="btn btn-primary btn-active" row='4' col='2'/>
+            <Button text="-" tap="{{ performOperation }}" class="btn btn-primary btn-active" row='4' col='3'/>
+
+            <Button text="1" tap="{{ nums }}" class="btn btn-primary btn-active" row='5' col='0'/>
+            <Button text="2" tap="{{ nums }}" class="btn btn-primary btn-active" row='5' col='1'/>
+            <Button text="3" tap="{{ nums }}" class="btn btn-primary btn-active" row='5' col='2'/>
+            <Button text="×" tap="{{ performOperation }}" class="btn btn-primary btn-active" row='5' col='3'/>
+
+            <Button text="0" tap="{{ nums }}" class="btn btn-primary btn-active" row='6' col='0' colSpan='2'/>
+            <Button text="." tap="{{ decimal }}" class="btn btn-primary btn-active" row='6' col='2'/>
+            <Button text="=" tap="{{ equal }}" class="btn btn-primary btn-active" row='6' col='3'/>
+        </GridLayout>
+    </StackLayout>
+</Page>
